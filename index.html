@@ -5,9 +5,82 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
+	<style>
+
+/* Элемент | http://127.0.0.1:5500/index.html */
+
+.calc__wrap {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Элемент | http://127.0.0.1:5500/index.html */
+
+body {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Элемент | http://127.0.0.1:5500/index.html */
+
+.win {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Элемент | http://127.0.0.1:5500/index.html */
+
+.options {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Элемент | http://127.0.0.1:5500/index.html */
+
+body > h1:nth-child(1) {
+  text-align: center;
+}
+
+.price {
+	font-size: 20px;
+	color: red;
+	padding: 10px;
+}
+
+	</style>
 </head>
 <body>
-	
+	<h1>Тип и размер окна</h1>
+	<section>
+		<div class="calc__wrap">
+			<div class="win">
+				<input type="checkbox" name="" id=""><span>1 тип</span>
+				<input type="checkbox" name="" id=""><span>2 тип</span>
+				<input type="checkbox" name="" id=""><span>3 тип</span>
+				<input type="checkbox" name="" id=""><span>4 тип</span>
+				<input type="checkbox" name="" id=""><span>5 тип</span>
+				<input type="checkbox" name="" id=""><span>6 тип</span>
+				<input type="checkbox" name="" id=""><span>7 тип</span>
+				<input type="checkbox" name="" id=""><span>8 тип</span>
+				<input type="checkbox" name="" id=""><span>9 тип</span>
+				<input type="checkbox" name="" id=""><span>10 тип</span>
+			</div>
+			<div class="size">
+				<input type="range" name="size1" id="size1" min="1000" max="2000" step="10">
+				<span id="sizeName1">1000</span>
+				<input type="range" name="size2" id="size2" min="1000" max="2000" step="10">
+				<span id="sizeName2">1000</span>
+			</div>
+			<div class="options">
+					<input type="checkbox" name="" id=""><span>Подокойник</span>
+					<input type="checkbox" name="" id=""><span>Отлив</span>
+					<input type="checkbox" name="" id=""><span>Откосы</span>
+					<input type="checkbox" name="" id=""><span>Ламинация</span>
+					<input type="checkbox" name="" id=""><span>Москитная сетка</span>
+			</div>
+		</div>
+		<div class="price"><span id="price"></span><span>руб.</span></div>
+	</section>
 
 	<script src="main.js"></script>
 </body>
