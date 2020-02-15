@@ -27,9 +27,6 @@ let lamValue = 0;
 let setValue = 0;
 let podValue = 0;
 
-// prof1 = 500;
-// prof2 = 600;
-// prof3 = 700;
 size1.value = 1000;
 size2.value = 1000;
 
@@ -101,7 +98,8 @@ let checked = function() {
 		}
 	});
 	/* -------------- */
-	for (let i = 0; i < type.length; i++) { /*Перебор всех тип окон*/ 
+/*Перебор всех тип окон*/
+	for (let i = 0; i < type.length; i++) { 
 		type[i].checked = false;
 		console.log(type[i]);
 	type[i].addEventListener('change', function() {
@@ -145,8 +143,9 @@ let checked = function() {
 			pricef();
 		});
 	};
-
-	for (let i = 0; i < prof.length; i++) { /*Перебор всех типов профилей*/ 
+/* ------------------- */
+/*Перебор всех типов профилей*/
+	for (let i = 0; i < prof.length; i++) { 
 		prof[i].checked = false;
 		console.log(prof[i]);
 		prof[i].addEventListener('change', function() {
@@ -169,8 +168,9 @@ let checked = function() {
 			pricef();
 		});
 	};
-
-	for (let i = 0; i < glass.length; i++) { /*Перебор всех типов стеклопакетов*/
+/* --------------- */
+/*Перебор всех типов стеклопакетов*/
+	for (let i = 0; i < glass.length; i++) { 
 		glass[i].checked = false;
 		console.log(glass[i]);
 		glass[i].addEventListener('change', function () {
@@ -193,7 +193,7 @@ let checked = function() {
 			pricef();
 		});
 	};
-
+/* -------------------- */
 
 	size1.addEventListener('input', function () {
 		sizeName1.innerText = size1.value;
