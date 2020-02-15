@@ -22,12 +22,15 @@ let otk = document.getElementById('otk');
 let lam = document.getElementById('lam');
 let set = document.getElementById('set');
 
-let check = document.querySelectorAll('.itemwind');
+let type = document.querySelectorAll('.typewind');
 let prof = document.querySelectorAll('.prof');
+let glass = document.querySelectorAll('.glass');
 let typeWin;
 let typeProf;
-let valueCheckPrice = 0;
+let typeGlass;
+let valueTypePrice = 0;
 let valueProfPrice = 0;
+let valueGlassPrice = 0;
 
 // prof1 = 500;
 // prof2 = 600;
@@ -39,59 +42,59 @@ size2.value = 1000;
 let checked = function() {
 
 
-	for (let i = 0; i < check.length; i++) { /*Перебор всех тип окон*/ 
-		check[i].checked = false;
-		console.log(check[i]);
-		check[i].addEventListener('change', function() {
-			if (check[i].checked){
-				typeWin = parseInt(check[i].dataset.item);
+	for (let i = 0; i < type.length; i++) { /*Перебор всех тип окон*/ 
+		type[i].checked = false;
+		console.log(type[i]);
+	type[i].addEventListener('change', function() {
+			if (type[i].checked){
+				typeWin = parseInt(type[i].dataset.item);
 				console.log('typeWin: ', typeWin);
 				switch (typeWin) { /*установка цены типа окна*/ 
 					case 11: 
-						valueCheckPrice = 1000;
+						valueTypePrice = 1000;
 						break;
 					case 12:
-						valueCheckPrice = 1100;
+						valueTypePrice = 1100;
 						break;
 					case 13:
-						valueCheckPrice = 1150;
+						valueTypePrice = 1150;
 						break;
 					case 14:
-						valueCheckPrice = 1200;
+						valueTypePrice = 1200;
 						break;
 					case 15:
-						valueCheckPrice = 1250;
+						valueTypePrice = 1250;
 						break;
 					case 16:
-						valueCheckPrice = 1300;
+						valueTypePrice = 1300;
 						break;
 					case 17:
-						valueCheckPrice = 1350;
+						valueTypePrice = 1350;
 						break;
 					case 18:
-						valueCheckPrice = 1400;
+						valueTypePrice = 1400;
 						break;
 					case 19:
-						valueCheckPrice = 1450;
+						valueTypePrice = 1450;
 						break;
 					case 110:
-						valueCheckPrice = 1500;
+						valueTypePrice = 1500;
 						break;
 				}
 			};
-			console.log(valueCheckPrice);
+			console.log(valueTypePrice);
 			pricef();
 		});
 	};
 
-	for (let i = 0; i < prof.length; i++) { /*Перебор всех тип профилей*/ 
+	for (let i = 0; i < prof.length; i++) { /*Перебор всех типов профилей*/ 
 		prof[i].checked = false;
 		console.log(prof[i]);
 		prof[i].addEventListener('change', function() {
 			if (prof[i].checked) {
 				typeProf = parseInt(prof[i].dataset.item);
 				console.log('typeProf: ', typeProf);
-				switch (typeProf) { /*установка цены типа профилей*/
+				switch (typeProf) { /*установка цены типов профилей*/
 					case 21:
 						valueProfPrice = 1000;
 						break;
@@ -108,6 +111,30 @@ let checked = function() {
 		});
 	};
 
+	for (let i = 0; i < glass.length; i++) { /*Перебор всех типов стеклопакетов*/
+		glass[i].checked = false;
+		console.log(glass[i]);
+		glass[i].addEventListener('change', function () {
+			if (glass[i].checked) {
+				typeGlass = parseInt(glass[i].dataset.item);
+				console.log('typeGlass: ', typeGlass);
+				switch (typeGlass) { /*установка цены типов стеклопакетов*/
+					case 31:
+						valueGlassPrice = 1000;
+						break;
+					case 32:
+						valueGlassPrice = 1100;
+						break;
+					case 33:
+						valueGlassPrice = 1150;
+						break;
+				}
+			};
+			console.log(valueGlassPrice);
+			pricef();
+		});
+	};
+
 
 	size1.addEventListener('input', function () {
 		sizeName1.innerText = size1.value;
@@ -120,7 +147,7 @@ let checked = function() {
 	});
 
 	let pricef = function () {
-		price.innerText = Math.floor((((parseInt(size1.value) + parseInt(size2.value)) * 2) / 1000) * valueProfPrice + valueCheckPrice);
+		price.innerText = Math.floor((((parseInt(size1.value) * 2) + (parseInt(size2.value) * 2)) / 1000) * valueProfPrice + (valueTypePrice + valueGlassPrice));
 		};
 	
 }
