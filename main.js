@@ -13,12 +13,19 @@ let set = document.getElementById('set');
 let type = document.querySelectorAll('.typewind');
 let prof = document.querySelectorAll('.prof');
 let glass = document.querySelectorAll('.glass');
+
 let typeWin;
 let typeProf;
 let typeGlass;
+
 let valueTypePrice = 0;
 let valueProfPrice = 0;
 let valueGlassPrice = 0;
+let otlValue = 0;
+let otkValue = 0;
+let lamValue = 0;
+let setValue = 0;
+let podValue = 0;
 
 // prof1 = 500;
 // prof2 = 600;
@@ -28,8 +35,72 @@ size2.value = 1000;
 
 
 let checked = function() {
-
-
+	otl.checked = false;
+	otk.checked = false;
+	lam.checked = false;
+	set.checked = false;
+	pod.checked = false;
+	
+	/* расчет подокойника */
+	pod.addEventListener('change', function() {
+		if(pod.checked) {
+			podValue = 1500;
+			console.log(podValue);
+			pricef();
+		} else {
+			podValue = 0;
+			pricef();
+		}
+	});
+	/* -------------- */
+	/* расчет отлива */
+	otl.addEventListener('change', function () {
+		if (otl.checked) {
+			otlValue = 800;
+			console.log(otlValue);
+			pricef();
+		} else {
+			otlValue = 0;
+			pricef();
+		}
+	});
+	/* -------------- */
+	/* расчет откосы */
+	otk.addEventListener('change', function () {
+		if (otk.checked) {
+			otkValue = 800;
+			console.log(otkValue);
+			pricef();
+		} else {
+			otkValue = 0;
+			pricef();
+		}
+	});
+	/* -------------- */
+	/* расчет ламинация */
+	lam.addEventListener('change', function () {
+		if (lam.checked) {
+			lamValue = 800;
+			console.log(lamValue);
+			pricef();
+		} else {
+			lamValue = 0;
+			pricef();
+		}
+	});
+	/* -------------- */
+	/* расчет москитная сетка */
+	set.addEventListener('change', function () {
+		if (set.checked) {
+			setValue = 1000;
+			console.log(setValue);
+			pricef();
+		} else {
+			setValue = 0;
+			pricef();
+		}
+	});
+	/* -------------- */
 	for (let i = 0; i < type.length; i++) { /*Перебор всех тип окон*/ 
 		type[i].checked = false;
 		console.log(type[i]);
@@ -87,10 +158,10 @@ let checked = function() {
 						valueProfPrice = 1000;
 						break;
 					case 22:
-						valueProfPrice = 1100;
+						valueProfPrice = 1700;
 						break;
 					case 23:
-						valueProfPrice = 1150;
+						valueProfPrice = 2500;
 						break;
 				}
 			};
@@ -134,8 +205,10 @@ let checked = function() {
 		pricef();
 	});
 
+	/* расчет итоговой суммы */
 	let pricef = function () {
-		price.innerText = Math.floor(((((parseInt(size1.value) * 2) + (parseInt(size2.value) * 2)) / 1000) * valueProfPrice) + (valueTypePrice + valueGlassPrice));
+		price.innerText = Math.floor(((((parseInt(size1.value) * 2) + (parseInt(size2.value) * 2)) / 1000) * valueProfPrice) + (valueTypePrice + valueGlassPrice
+			+ podValue + otlValue + otkValue + lamValue + setValue));
 		};
 	
 }
