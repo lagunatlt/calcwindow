@@ -3,19 +3,7 @@ let size2 = document.getElementById('size2');
 let sizeName1 = document.getElementById('sizeName1');
 let sizeName2 = document.getElementById('sizeName2');
 let price = document.getElementById('price');
-// let itemwind1 = document.getElementById('itemwind1');
-// let itemwind2 = document.getElementById('itemwind2');
-// let itemwind3 = document.getElementById('itemwind3');
-// let itemwind4 = document.getElementById('itemwind4');
-// let itemwind5 = document.getElementById('itemwind5');
-// let itemwind6 = document.getElementById('itemwind6');
-// let itemwind7 = document.getElementById('itemwind7');
-// let itemwind8 = document.getElementById('itemwind8');
-// let itemwind9 = document.getElementById('itemwind9');
-// let itemwind10 = document.getElementById('itemwind10');
-let porf1 = document.getElementById('porf1');
-let porf2 = document.getElementById('porf2');
-let porf3 = document.getElementById('porf3');
+
 let pod = document.getElementById('pod');
 let otl = document.getElementById('otl');
 let otk = document.getElementById('otk');
@@ -147,7 +135,7 @@ let checked = function() {
 	});
 
 	let pricef = function () {
-		price.innerText = Math.floor((((parseInt(size1.value) * 2) + (parseInt(size2.value) * 2)) / 1000) * valueProfPrice + (valueTypePrice + valueGlassPrice));
+		price.innerText = Math.floor(((((parseInt(size1.value) * 2) + (parseInt(size2.value) * 2)) / 1000) * valueProfPrice) + (valueTypePrice + valueGlassPrice));
 		};
 	
 }
