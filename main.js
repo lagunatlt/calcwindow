@@ -32,9 +32,12 @@ let valueProfPrice = 0;
 // prof1 = 500;
 // prof2 = 600;
 // prof3 = 700;
+size1.value = 1000;
+size2.value = 1000;
 
 
 let checked = function() {
+
 
 	for (let i = 0; i < check.length; i++) { /*Перебор всех тип окон*/ 
 		check[i].checked = false;
