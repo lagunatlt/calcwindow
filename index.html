@@ -17,7 +17,7 @@
 /* Элемент | http://127.0.0.1:5500/index.html */
 
 body {
-  max-width: 600px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -65,6 +65,8 @@ body > h1:nth-child(1) {
 				<input type="radio" name="itemwind" id="itemwind8" data-item="18" class="itemwind"><span>8 тип</span>
 				<input type="radio" name="itemwind" id="itemwind9" data-item="19" class="itemwind"><span>9 тип</span>
 				<input type="radio" name="itemwind" id="itemwind10" data-item="110" class="itemwind"><span>10 тип</span>
+
+				
 			</div>
 			<div class="size">
 				<div>
@@ -77,10 +79,18 @@ body > h1:nth-child(1) {
 					<input type="range" name="size2" id="size2" min="1000" max="2000" step="10" value="0">
 					<span id="sizeName2">1000</span><span>mm</span>
 				</div>
-				тип профиля
-				<input type="radio" name="porf" id="porf1" class="prof" data-item="21"><span>1 тип</span>
-				<input type="radio" name="porf" id="porf2" class="prof" data-item="22"><span>2 тип</span>
-				<input type="radio" name="porf" id="porf3" class="prof" data-item="23"><span>3 тип</span>
+				<div>
+					тип профиля
+					<input type="radio" name="porf" id="porf1" class="prof" data-item="21"><span>1 тип</span>
+					<input type="radio" name="porf" id="porf2" class="prof" data-item="22"><span>2 тип</span>
+					<input type="radio" name="porf" id="porf3" class="prof" data-item="23"><span>3 тип</span>
+				</div>
+				<div>
+					тип стеклопакета
+					<input type="radio" name="glas" id="glas1" class="glas" data-item="31"><span>1 камера</span>
+					<input type="radio" name="glas" id="glas2" class="glas" data-item="32"><span>2 камеры</span>
+					<input type="radio" name="glas" id="glas3" class="glas" data-item="33"><span>3 камеры</span>
+				</div>
 			</div>
 			<div class="options">
 					<input type="checkbox" name="pod" id="pod"><span>Подокойник</span>
@@ -91,6 +101,9 @@ body > h1:nth-child(1) {
 			</div>
 		</div>
 		<div class="price"><span id="price">0</span><span>руб.</span></div>
+		<div>
+			Тип фурнитуры окна = Поворотно-откидная, Поворотная, Фрамужная
+		</div>
 	</div>
 
 	<script src="main.js"></script>
